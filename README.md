@@ -1,4 +1,3 @@
-# Sp-rgeskemaUnders-gelseProjekt2
 # Spørgeskemaundersøgelse for Turistbureauets Hjemmesidedesigns
 
 ## Projektbeskrivelse

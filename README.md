@@ -76,6 +76,3 @@ Dette projekt er en platform, der præsenterer en række hjemmesidedesigns for b
 ## Forbedringsmuligheder
 - Udvidelse med statistikvisning for mere detaljeret dataindsigt.
 - Implementering af flere spørgeskemaformater for avanceret dataindsamling.
-
-## Kontakt
-For spørgsmål eller support, kontakt [dit navn eller din e-mail].

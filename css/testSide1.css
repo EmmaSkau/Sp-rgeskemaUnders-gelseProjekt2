@@ -90,7 +90,7 @@ nav ul li a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-input, #btn {
+input {
     border: 1px solid #ccc;
     padding: 10px;
     flex: 1;

@@ -192,7 +192,7 @@ input{
     display: flex;
     justify-content: space-evenly;
     background-color: #fff;
-    padding: 20px 0;
+    padding: 2em 0;
     border-top: 1px solid #ccc;
 }
 
@@ -203,8 +203,127 @@ input{
 #footer-section h4 {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 #footer-section p {
-    margin: 5px 0;
+    margin: 20px 0;
+}
+
+
+/* ----- RESPONSIV DESIGN ----- */
+
+/* Skærme under 1024px */
+@media (max-width: 1024px) {
+    body {
+        max-width: 90%;
+    }
+
+    #hero {
+        height: 60vh;
+    }
+
+    #flexBox {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    #rejsemaaler {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #budgetSec {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Skærme under 768px (Tablets og mindre) */
+@media (max-width: 768px) {
+    #header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #flexBox input,
+    #flexBox button {
+        width: 100%;
+    }
+
+    #rejsemaaler {
+        grid-template-columns: 1fr;
+    }
+
+    #budgetSec {
+        grid-template-columns: 1fr;
+    }
+
+    #footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* Skærme under 480px (Mobilvenligt layout) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #flexBox input,
+    #flexBox button {
+        width: 100%;
+    }
+
+    #btn, #budgetBtn {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #tekstBoxOver {
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+/* ----- BURGER MENU ----- */
+#burger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #burger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
 }

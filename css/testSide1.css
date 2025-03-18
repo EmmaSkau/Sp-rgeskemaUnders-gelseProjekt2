@@ -65,6 +65,12 @@ nav ul li a {
     font-size: 16px;
 }
 
+#burger-menu {
+    display: none; /* Skjules som standard */
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* ----- HERO SECTION ----- */
 #hero {
     position: relative;
@@ -214,7 +220,7 @@ input {
     display: flex;
     justify-content: space-evenly;
     background-color: #fff;
-    padding: 20px 0;
+    padding: 2em 0;
     border-top: 1px solid #ccc;
 }
 
@@ -225,8 +231,118 @@ input {
 #footer-section h4 {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 #footer-section p {
-    margin: 5px 0;
+    margin: 20px 0;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+/* Skærme under 1024px */
+@media (max-width: 1024px) {
+    body {
+        max-width: 100%;
+    }
+
+    #hero {
+        height: 60vh;
+    }
+
+    #flexBox {
+        flex-direction: column;
+    }
+
+    #rejsemaaler {
+        gap: 15px;
+    }
+
+    #billedeSection {
+        flex-direction: column;
+    }
+
+    #loremIpsum {
+        margin: 0;
+    }
+
+    .large {
+        flex: 1;
+    }
+}
+
+/* Skærme under 768px (Tablets og mindre) */
+@media (max-width: 768px) {
+    #burger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Under header */
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #rejsemaalDiv {
+        width: 100%;
+    }
+
+    #loremIpsum p {
+        max-width: 90%;
+    }
+
+    #footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* Skærme under 480px (Mobilvenligt layout) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #flexBox input,
+    #flexBox button {
+        width: 100%;
+    }
+
+    #btn {
+        width: 100%;
+        padding: 1em;
+    }
+
+    #tekstBoxOver {
+        bottom: 10px;
+        left: 10px;
+    }
 }

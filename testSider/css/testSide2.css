@@ -27,18 +27,19 @@ p {
     margin: 5px 0;
 }
 
+/* ----- KNAP DESIGN ----- */
 #btn {
-    background-color: #41B5B9;     
-    color: #000000;
+    background-color: #E24848;
+    color: #fff;
     border: none;
     padding: 2em 5em;
     border-radius: 20px;
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 #btn:hover {
-    background-color: #45a0a3;
+    background-color: #b82a2a;
 }
 
 /* ----- HEADER ----- */
@@ -64,11 +65,17 @@ nav ul li a {
     font-size: 16px;
 }
 
+#burger-menu {
+    display: none; /* Skjules som standard */
+    font-size: 30px;
+    cursor: pointer;
+}
+
 /* ----- HERO SECTION ----- */
 #hero {
     position: relative;
     height: 80vh;
-    background-image: url('../img/testSide2/southOcean.jpg');
+    background-image: url('../img/testSide1/hero.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -80,7 +87,7 @@ nav ul li a {
     text-align: center;
 }
 
-#flexBox {                      
+#flexBox {
     display: flex;
     gap: 10px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -89,35 +96,28 @@ nav ul li a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-input{
+input {
     border: 1px solid #ccc;
     padding: 10px;
     flex: 1;
 }
 
-/* ----- POPULÆRE REJSEMÅL ----- */
+/* ----- POPULÆRE REJSEMÅL + HOTELLER ----- */
 #rejsemaal {
     text-align: center;
-    margin: 0 auto;
-    max-width: 50%;
-    padding: 4em 0;
-}
-
-#rejsemaal button{
-    font-weight:800;
-    font-size: larger;
-    margin-top: 2em;
+    margin: 6em auto;
 }
 
 #rejsemaaler {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
-    justify-content: center; 
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #rejsemaalDiv {
-    width: 250px;
+    max-height: 10vh;
+    width: auto;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     overflow: hidden;
@@ -156,36 +156,65 @@ input{
     font-weight: bold;
 }
 
-
-/* ----- BUDGETTER ----- */
-#budget{
-    background-color: #dcdadacc;
-    border:1px solid #000;
-    border-radius: 20px;
-    padding: 4em;
-    margin: 3em 0;
-}
-
-#budgetSec{
+/* ----- BILLEDE SECTION ----- */
+#billedeSection {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 4em;
+    gap: 10px;
+    max-width: 100%;
 }
 
-#budgetBtn{
-    padding: 1em 2em;
-    font-weight: bold;
-    background-color: #ffffff;     
-    color: #000000;
-    border:1px solid #000;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 1em;
+#billedeContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
+.large {
+    flex: 2;
+}
 
+#rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+#billedeContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%); /* Mørkere billede */
+}
+
+#tekstBoxOver {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+#tekstBoxOver p {
+    margin-bottom: 1.5em;
+}
+
+/* ----- LOREM IPSUM TEKST ----- */
+#loremIpsum {
+    margin: 3em;
+    padding: 5em 0;
+    text-align: center;
+}
+
+#loremIpsum p {
+    max-width: 60%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#loremIpsum button{
+    margin-top: 2em;
+}
 
 /* ----- FOOTER ----- */
 #footer {
@@ -210,13 +239,12 @@ input{
     margin: 20px 0;
 }
 
-
-/* ----- RESPONSIV DESIGN ----- */
+/* ----- MEDIA QUERIES ----- */
 
 /* Skærme under 1024px */
 @media (max-width: 1024px) {
     body {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     #hero {
@@ -225,40 +253,66 @@ input{
 
     #flexBox {
         flex-direction: column;
-        width: 80%;
     }
 
     #rejsemaaler {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
-    #budgetSec {
-        grid-template-columns: repeat(2, 1fr);
+    #billedeSection {
+        flex-direction: column;
+    }
+
+    #loremIpsum {
+        margin: 0;
+    }
+
+    .large {
+        flex: 1;
     }
 }
 
 /* Skærme under 768px (Tablets og mindre) */
 @media (max-width: 768px) {
-    #header nav ul {
+    #burger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px; /* Under header */
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
     }
 
     h1 {
         font-size: 2.5rem;
     }
 
-    #flexBox input,
-    #flexBox button {
+    #rejsemaalDiv {
         width: 100%;
     }
 
-    #rejsemaaler {
-        grid-template-columns: 1fr;
-    }
-
-    #budgetSec {
-        grid-template-columns: 1fr;
+    #loremIpsum p {
+        max-width: 90%;
     }
 
     #footer {
@@ -283,7 +337,7 @@ input{
         width: 100%;
     }
 
-    #btn, #budgetBtn {
+    #btn {
         width: 100%;
         padding: 1em;
     }
@@ -291,39 +345,5 @@ input{
     #tekstBoxOver {
         bottom: 10px;
         left: 10px;
-    }
-}
-
-/* ----- BURGER MENU ----- */
-#burger-menu {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    #burger-menu {
-        display: block;
-    }
-
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    #nav-links.active {
-        display: flex;
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid #eee;
     }
 }

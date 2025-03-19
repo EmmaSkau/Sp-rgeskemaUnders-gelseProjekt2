@@ -9,12 +9,10 @@ body {
 /* ----- GENERELT ----- */
 h1 {
     font-size: 4rem;
-    margin-bottom: 5em;
 }
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
 }
 
 h3 {
@@ -25,6 +23,19 @@ h3 {
 p {
     font-size: 1rem;
     margin: 5px 0;
+}
+
+button{
+    background-color: #EBDCCB;
+    padding: 1em 2em;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+button:hover{
+    background-color: #dccebf;
 }
 
 
@@ -57,6 +68,51 @@ input {
     border: 1px solid #ccc;
     padding: 10px;
     flex: 1;
+}
+
+/* ----- LOREM TEKST ----- */
+#popular{
+    text-align: center;
+}
+
+
+/* ----- POPULÆRE HOTELLER ----- */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+.item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item.large { grid-column: span 2; }
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+.content {
+    position: relative;
+    z-index: 1;
+}
+.btn {
+    background-color: #f1e3d3;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 
@@ -101,4 +157,28 @@ input {
 
 #tekstBoxOver p {
     margin-bottom: 1.5em;
+}
+
+
+/* ----- FOOTER ----- */
+#footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 2em 0;
+    border-top: 1px solid #ccc;
+}
+
+#footer-section {
+    text-align: left;
+}
+
+#footer-section h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#footer-section p {
+    margin: 20px 0;
 }

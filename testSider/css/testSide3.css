@@ -82,6 +82,7 @@ nav ul li a {
 
 #flexBox {                      
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
@@ -229,19 +230,49 @@ input{
     }
 
     #rejsemaaler {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* To kolonner for bedre plads */
     }
 
     #budgetSec {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
 
 /* Skærme under 768px (Tablets og mindre) */
 @media (max-width: 768px) {
-    #header nav ul {
+    #burger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
     }
 
     h1 {
@@ -263,8 +294,8 @@ input{
 
     #footer {
         flex-direction: column;
-        gap: 20px;
         text-align: center;
+        gap: 20px;
     }
 }
 
@@ -291,6 +322,10 @@ input{
     #tekstBoxOver {
         bottom: 10px;
         left: 10px;
+    }
+
+    #rejsemaalDiv {
+        width: 100%;
     }
 }
 

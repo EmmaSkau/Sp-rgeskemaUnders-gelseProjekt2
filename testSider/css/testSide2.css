@@ -89,6 +89,7 @@ nav ul li a {
 
 #flexBox {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
@@ -242,7 +243,7 @@ input {
 
 /* ----- MEDIA QUERIES ----- */
 
-/* Skærme under 1024px */
+/* Skærme under 1024px (Tablets og mindre) */
 @media (max-width: 1024px) {
     body {
         max-width: 100%;
@@ -254,10 +255,11 @@ input {
 
     #flexBox {
         flex-direction: column;
+        width: 90%;
     }
 
     #rejsemaaler {
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* To kolonner for bedre plads */
     }
 
     #billedeSection {
@@ -285,7 +287,7 @@ input {
         width: 100%;
         background-color: #fff;
         position: absolute;
-        top: 60px; /* Under header */
+        top: 60px; 
         left: 0;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
@@ -306,6 +308,12 @@ input {
 
     h1 {
         font-size: 2.5rem;
+    }
+
+    #rejsemaaler{
+        display: block;
+        max-width: 100%;
+        margin: 1em;
     }
 
     #rejsemaalDiv {
@@ -346,5 +354,9 @@ input {
     #tekstBoxOver {
         bottom: 10px;
         left: 10px;
+    }
+
+    #rejsemaaler {
+        grid-template-columns: 1fr; /* Én kolonne for optimal plads */
     }
 }
